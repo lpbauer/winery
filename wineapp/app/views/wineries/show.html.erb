@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @winery.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @winery.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @winery.description %>
+</p>
+
+<p>
+  <ul>
+      <li>
+        <%= render partial: "wine", collection: @winery.wines %>
+      </li>
+  </ul>
+</p>
+
+
+<%= link_to 'New Wine', new_wine_path() + "?winery_id=" + @winery.id.to_s%>
+<%= link_to 'Edit', edit_winery_path(@winery) %> |
+<%= link_to 'Back', wineries_path %>
